@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OKN — Open Knowledge Network</title>
+
+    <link rel="icon" type="image/png" href="resources/favicon.png">
+
+    
+
+    <!-- Design System -->
+    <link rel="stylesheet" type="text/css" href="css/design-system.css">
+
+    <!-- Header Styles -->
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+
+    <!-- Main Application Styles -->
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header id="site-header" class="site-navbar">
+        <div class="navbar-inner">
+            <div class="navbar-left">
+                <button class="navbar-hamburger" id="hamburger-btn" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+                <a href="index.html" class="navbar-brand">
+                    <img src="resources/logo-small.svg" alt="OKN" class="navbar-logo" />
+                    <span class="navbar-brand-text">okn.us</span>
+                </a>
+            </div>
+            <nav class="navbar-links" id="navbar-links">
+                
+                
+                <div class="nav-dropdown">
+                    <button class="nav-link nav-dropdown-toggle">Explore</button>
+                    <div class="nav-dropdown-menu">
+                        
+                        <a href="https://registry.okn.us/" class="nav-dropdown-item">Fabric</a>
+                        
+                        <a href="https://registry.okn.us/registry/" class="nav-dropdown-item">okn.us Registry</a>
+                        
+                        <a href="https://apps.okn.us/embeddings/" class="nav-dropdown-item">Embeddings</a>
+                        
+                    </div>
+                </div>
+                
+                
+                
+                <div class="nav-dropdown">
+                    <button class="nav-link nav-dropdown-toggle">Query okn.us</button>
+                    <div class="nav-dropdown-menu">
+                        
+                        <a href="https://apps.okn.us/" class="nav-dropdown-item">SPARQL</a>
+                        
+                        <a href="https://registry.okn.us/query/query-page/" class="nav-dropdown-item">Query Tool</a>
+                        
+                        <a href="https://registry.okn.us/query/sample-query-library/" class="nav-dropdown-item">Sample Query Library</a>
+                        
+                        <a href="https://okn.us/mcp" class="nav-dropdown-item">MCP Server</a>
+                        
+                    </div>
+                </div>
+                
+                
+                
+                <div class="nav-dropdown">
+                    <button class="nav-link nav-dropdown-toggle">Contribute</button>
+                    <div class="nav-dropdown-menu">
+                        
+                        <a href="https://registry.okn.us/book/" class="nav-dropdown-item">Building Graphs</a>
+                        
+                        <a href="https://registry.okn.us/help/" class="nav-dropdown-item">Uploading Graphs</a>
+                        
+                    </div>
+                </div>
+                
+                
+                
+                <a href="https://www.proto-okn.net/" class="nav-link">About</a>
+                
+                
+                
+                
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile nav drawer -->
+    <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+    <nav class="mobile-nav-drawer" id="mobile-nav-drawer">
+        <button class="mobile-nav-close" id="mobile-nav-close" aria-label="Close menu">&times;</button>
+        
+        
+        <div class="mobile-nav-group">
+            <span class="mobile-nav-heading">Explore</span>
+            
+            <a href="https://registry.okn.us/" class="mobile-nav-link">Fabric</a>
+            
+            <a href="https://registry.okn.us/registry/" class="mobile-nav-link">okn.us Registry</a>
+            
+            <a href="https://apps.okn.us/embeddings/" class="mobile-nav-link">Embeddings</a>
+            
+        </div>
+        
+        
+        
+        <div class="mobile-nav-group">
+            <span class="mobile-nav-heading">Query okn.us</span>
+            
+            <a href="https://apps.okn.us/" class="mobile-nav-link">SPARQL</a>
+            
+            <a href="https://registry.okn.us/query/query-page/" class="mobile-nav-link">Query Tool</a>
+            
+            <a href="https://registry.okn.us/query/sample-query-library/" class="mobile-nav-link">Sample Query Library</a>
+            
+            <a href="https://okn.us/mcp" class="mobile-nav-link">MCP Server</a>
+            
+        </div>
+        
+        
+        
+        <div class="mobile-nav-group">
+            <span class="mobile-nav-heading">Contribute</span>
+            
+            <a href="https://registry.okn.us/book/" class="mobile-nav-link">Building Graphs</a>
+            
+            <a href="https://registry.okn.us/help/" class="mobile-nav-link">Uploading Graphs</a>
+            
+        </div>
+        
+        
+        
+        <a href="https://www.proto-okn.net/" class="mobile-nav-link">About</a>
+        
+        
+    </nav>
+
+    
+    <!-- Hero Section -->
+    <section class="landing-hero">
+        <h1 class="hero-title">Open Knowledge Network</h1>
+        <p class="hero-subtitle">Query across 40+ interconnected knowledge graphs</p>
+
+        <!-- Hero Buttons -->
+        <div class="hero-buttons">
+            
+            <a href="https://registry.okn.us/registry/" class="hero-btn">
+                <div class="hero-btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/></svg></div>
+                <span class="hero-btn-label">View the graphs</span>
+                <span class="hero-btn-desc">Browse 40+ registered knowledge graphs</span>
+            </a>
+            
+            <a href="crosswalks.html" class="hero-btn">
+                <div class="hero-btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="7" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="17" cy="18" r="2.5"/><line x1="8.4" y1="6.8" x2="15.5" y2="6.2"/><line x1="7.6" y1="9.1" x2="15.4" y2="15.9"/><line x1="17.9" y1="8.5" x2="17.1" y2="15.5"/></svg></div>
+                <span class="hero-btn-label">Explore Crosswalks</span>
+                <span class="hero-btn-desc">Discover shared identifiers and mappings between knowledge graphs</span>
+            </a>
+
+            <a href="https://okn.us/mcp" class="hero-btn">
+                <div class="hero-btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4.5h16A1.5 1.5 0 0 1 21.5 6v8a1.5 1.5 0 0 1-1.5 1.5h-9.5L6 19.5V15.5H4A1.5 1.5 0 0 1 2.5 14V6A1.5 1.5 0 0 1 4 4.5z"/><circle cx="8" cy="10" r="1" fill="currentColor" stroke="none"/><circle cx="12" cy="10" r="1" fill="currentColor" stroke="none"/><circle cx="16" cy="10" r="1" fill="currentColor" stroke="none"/></svg></div>
+                <span class="hero-btn-label">Search with AI Assistant</span>
+                <span class="hero-btn-desc">Configure the mcp-okn MCP server in Claude, ChatGPT, or another compatible AI assistant</span>
+            </a>
+
+            <a href="https://okn.us/search" class="hero-btn">
+                <div class="hero-btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="5" y1="9" x2="16" y2="9"/><line x1="8.5" y1="5.2" x2="8.5" y2="15.8"/><line x1="13" y1="5.2" x2="13" y2="15.8"/></svg></div>
+                <span class="hero-btn-label">Search with Spider</span>
+                <span class="hero-btn-desc">Run curated, templated queries across OKN knowledge graphs</span>
+            </a>
+
+        </div>
+
+
+        <p class="hero-blurb">Connected government data in knowledge graphs, powering AI-driven insights to strengthen U.S. competitiveness</p>
+    </section>
+
+    <!-- Knowledge Graphs Section -->
+    <section class="section-cards">
+        <div class="section-cards-inner">
+            <div class="section-cards-header">
+                <h2 class="section-cards-title">Knowledge graphs</h2>
+                <a href="https://registry.okn.us/registry/" class="section-cards-view-all"  rel="noopener noreferrer">View all 40+</a>
+            </div>
+            <!-- Carousel: horizontal scroll with arrow controls. Cards
+                 keep a fixed width so 40+ entries don't squeeze. JS in
+                 scripts.js wires the arrows; without JS, native scroll
+                 still works (drag, trackpad, touch). -->
+            <div class="kg-carousel" data-carousel="kg">
+                <button class="kg-carousel-arrow left" data-carousel-arrow="left" aria-label="Scroll left" type="button">&#8249;</button>
+                <div class="kg-carousel-track" data-carousel-track>
+                    
+                    <a href="https://registry.okn.us/registry/kgs/biobricks-aopwiki/" class="kg-card"  rel="noopener noreferrer" title="BioBricks AOP-Wiki is an open knowledge graph for Adverse Outcome Pathways from the AOP-Wiki.">
+                        <div class="kg-card-header">
+                            <span class="kg-status-dot" style="background: #6A1B9A;"></span>
+                            <strong class="kg-card-name">BioBricks AOP-Wiki</strong>
+                        </div>
+                        <p class="kg-card-desc">Open knowledge graph for Adverse Outcome Pathways from the AOP-Wiki.</p>
+                        <span class="kg-card-tag" style="color: #6A1B9A; background: #F3E5F5;">Bio</span>
+                    </a>
+                    
+                    <a href="https://registry.okn.us/registry/kgs/biobricks-ice/" class="kg-card"  rel="noopener noreferrer" title="BioBricks ICE (Integrated Chemical Environment) is an open knowledge graph for cheminformatics and chemical safety data from EPA&#39;s CompTox database.">
+                        <div class="kg-card-header">
+                            <span class="kg-status-dot" style="background: #6A1B9A;"></span>
+                            <strong class="kg-card-name">BioBricks ICE</strong>
+                        </div>
+                        <p class="kg-card-desc">Cheminformatics and chemical safety data from EPA&#39;s CompTox database.</p>
+                        <span class="kg-card-tag" style="color: #6A1B9A; background: #F3E5F5;">Bio</span>
+                    </a>
+                    
+                    <a href="https://registry.okn.us/registry/kgs/biobricks-mesh/" class="kg-card"  rel="noopener noreferrer" title="BioBricks MeSH is an open knowledge graph of Medical Subject Headings (MeSH) biomedical vocabulary.">
+                        <div class="kg-card-header">
+                            <span class="kg-status-dot" style="background: #6A1B9A;"></span>
+                            <strong class="kg-card-name">BioBricks MeSH</strong>
+                        </div>
+                        <p class="kg-card-desc">Medical Subject Headings (MeSH) biomedical vocabulary.</p>
+                        <span class="kg-card-tag" style="color: #6A1B9A; background: #F3E5F5;">Bio</span>
+                    </a>
+                    
+                    <a href="https://registry.okn.us/registry/kgs/biobricks-pubchem-annotations/" class="kg-card"  rel="noopener noreferrer" title="BioBricks PubChem Annotations is an open knowledge graph of chemical annotations from PubChem.">
+                        <div class="kg-card-header">
+                            <span class="kg-status-dot" style="background: #6A1B9A;"></span>
+                            <strong class="kg-card-name">BioBricks PubChem Annotations</strong>
+                        </div>
+                        <p class="kg-card-desc">Chemical annotations from PubChem.</p>
+                        <span class="kg-card-tag" style="color: #6A1B9A; background: #F3E5F5;">Bio</span>
+                    </a>
+                    
+                    <a href="https://registry.okn.us/registry/kgs/biobricks-tox21/" class="kg-card"  rel="noopener noreferrer" title="BioBricks Tox21 is an open knowledge graph for Tox21 toxicology screening data.">
+                        <div class="kg-card-header">
+                            <span class="kg-status-dot" style="background: #6A1B9A;"></span>
+                            <strong class="kg-card-name">BioBricks Tox21</strong>
+                        </div>
+                        <p class="kg-card-desc">Tox21 toxicology screening data.</p>
+                        <span class="kg-card-tag" style="color: #6A1B9A; background: #F3E5F5;">Bio</span>
+                    </a>
+                    
+                    <a href="https://registry.okn.us/registry/kgs/biobricks-toxcast/" class="kg-card"  rel="noopener noreferrer" title="BioBricks ToxCast is an open knowledge graph for EPA ToxCast high-throughput screening data.">
+                        <div class="kg-card-header">
+                            <span class="kg-status-dot" style="background: #6A1B9A;"></span>
+                            <strong class="kg-card-name">BioBricks ToxCast</strong>
+                        </div>
+                        <p class="kg-card-desc">EPA ToxCast high-throughput screening data.</p>
+                        <span class="kg-card-tag" style="color: #6A1B9A; background: #F3E5F5;">Bio</span>
+                    </a>
+                    
+                    <a href="https://registry.okn.us/registry/kgs/biohealth/" class="kg-card"  rel="noopener noreferrer" title="Bio-Health KG is a dynamically-updated open knowledge network for health, integrating biomedical insights with social determinants of health.">
+                        <div class="kg-card-header">
+                            <span class="kg-status-dot" style="background: #C62828;"></span>
+                            <strong class="kg-card-name">Bio-Health KG</strong>
+                        </div>
+                        <p class="kg-card-desc">Biomedical insights with social determinants of health.</p>
+                        <span class="kg-card-tag" style="color: #C62828; background: #FFEBEE;">Health</span>
+                    </a>
+                    
+                    <a href="https://registry.okn.us/registry/kgs/biomarkerkg/" class="kg-card"  rel="noopener noreferrer" title="The BiomarkerKB knowledge graph is a structured network that connects biomarkers to diseases, drugs, biological entities, and evidence from the scientific literature.">
+                        <div class="kg-card-header">
+                            <span class="kg-status-dot" style="background: #C62828;"></span>
+                            <strong class="kg-card-name">BiomarkerKB KG</strong>
+                        </div>
+                        <p class="kg-card-desc">Biomarkers, diseases, drugs, and supporting literature.</p>
+                        <span class="kg-card-tag" style="color: #C62828; background: #FFEBEE;">Health</span>
+                    </a>
+                    
+                    <a href="https://registry.okn.us/registry/kgs/climatemodelskg/" class="kg-card"  rel="noopener noreferrer" title="Climate Models KG is a knowledge graph to support evaluation and development of climate models.">
+                        <div class="kg-card-header">
+                            <span class="kg-status-dot" style="background: #0277BD;"></span>
+                            <strong class="kg-card-name">Climate Models KG</strong>
+                        </div>
+                        <p class="kg-card-desc">Evaluation and development of climate models.</p>
+                        <span class="kg-card-tag" style="color: #0277BD; background: #E1F5FE;">Climate</span>
+                    </a>
+                    
+                    <a href="https://registry.okn.us/registry/kgs/dreamkg/" class="kg-card"  rel="noopener noreferrer" title="Develop Dynamic, REsponsive, Adaptive, and Multifaceted Knowledge Graphs to Address Homelessness With Explainable AI">
+                        <div class="kg-card-header">
+                            <span class="kg-status-dot" style="background: #AD1457;"></span>
+                            <strong class="kg-card-name">DREAM-KG</strong>
+                        </div>
+                        <p class="kg-card-desc">Dynamic, adaptive knowledge graphs to address homelessness.</p>
+                        <span class="kg-card-tag" style="color: #AD1457; background: #FCE4EC;">Social</span>
+                    </a>
+                    
+                    <a href="https://registry.okn.us/registry/kgs/evoweb/" class="kg-card"  rel="noopener noreferrer" title="EvoWeb - An Open Knowledge Graph of Co-evolving Genes (NIAID)">
+                        <div class="kg-card-header">
+                            <span class="kg-status-dot" style="background: #6A1B9A;"></span>
+                            <strong class="kg-card-name">EvoWeb</strong>
+                        </div>
+                        <p class="kg-card-desc">Co-evolving genes (NIAID).</p>
+                        <span class="kg-card-tag" style="color: #6A1B9A; background: #F3E5F5;">Bio</span>
+                    </a>
+                    
+                    <a href="https://registry.okn.us/registry/kgs/fiokg/" class="kg-card"  rel="noopener noreferrer" title="The FRS (Facility Registry Service) KG is the part of the SAWGraph project that stores data about facilities from EPA&#39;s Facility Registry service (FRS) together with their NAICS industry classification and the spatial location.">
+                        <div class="kg-card-header">
+                            <span class="kg-status-dot" style="background: #2E7D32;"></span>
+                            <strong class="kg-card-name">SAWGraph FRS KG</strong>
+                        </div>
+                        <p class="kg-card-desc">EPA Facility Registry data with NAICS classification and location.</p>
+                        <span class="kg-card-tag" style="color: #2E7D32; background: #E8F5E9;">Environment</span>
+                    </a>
+                    
+                    <a href="https://registry.okn.us/registry/kgs/gene-expression-atlas-okn/" class="kg-card"  rel="noopener noreferrer" title="Selected studies from the Gene Expression Atlas (https://www.ebi.ac.uk/gxa/home).">
+                        <div class="kg-card-header">
+                            <span class="kg-status-dot" style="background: #6A1B9A;"></span>
+                            <strong class="kg-card-name">Gene Expression Atlas</strong>
+                        </div>
+                        <p class="kg-card-desc">Selected studies from the Gene Expression Atlas.</p>
+                        <span class="kg-card-tag" style="color: #6A1B9A; background: #F3E5F5;">Bio</span>
+                    </a>
+                    
+                    <a href="https://registry.okn.us/registry/kgs/geoconnex/" class="kg-card"  rel="noopener noreferrer" title="Geoconnex is an open, community-driven knowledge graph linking U.S. hydrologic features to enable seamless water data discovery, access, and collaborative monitoring.">
+                        <div class="kg-card-header">
+                            <span class="kg-status-dot" style="background: #00838F;"></span>
+                            <strong class="kg-card-name">GEOCONNEX</strong>
+                        </div>
+                        <p class="kg-card-desc">Linked U.S. hydrologic features for water data discovery.</p>
+                        <span class="kg-card-tag" style="color: #00838F; background: #E0F7FA;">Water</span>
+                    </a>
+                    
+                    <a href="https://registry.okn.us/registry/kgs/hydrologykg/" class="kg-card"  rel="noopener noreferrer" title="The Hydrology KG is the part of the SAWGraph project that describes streams, waterbodies and wells and their locations.">
+                        <div class="kg-card-header">
+                            <span class="kg-status-dot" style="background: #00838F;"></span>
+                            <strong class="kg-card-name">SAWGraph Hydrology KG</strong>
+                        </div>
+                        <p class="kg-card-desc">Streams, waterbodies and wells with their locations.</p>
+                        <span class="kg-card-tag" style="color: #00838F; background: #E0F7FA;">Water</span>
+                    </a>
+                    
+                    <a href="https://registry.okn.us/registry/kgs/identifier-mappings/" class="kg-card"  rel="noopener noreferrer" title="Mappings using standard RDF predicates between Wikidata entities and external identifiers represented as RDF IRIs">
+                        <div class="kg-card-header">
+                            <span class="kg-status-dot" style="background: #455A64;"></span>
+                            <strong class="kg-card-name">ID Mappings</strong>
+                        </div>
+                        <p class="kg-card-desc">Mappings between Wikidata entities and external identifiers.</p>
+                        <span class="kg-card-tag" style="color: #455A64; background: #ECEFF1;">Reference</span>
+                    </a>
+                    
+                    <a href="https://registry.okn.us/registry/kgs/maudekg/" class="kg-card"  rel="noopener noreferrer" title="Knowledge graph constructed from FDA MAUDE adverse event reports using standardized FDA product codes.">
+                        <div class="kg-card-header">
+                            <span class="kg-status-dot" style="background: #C62828;"></span>
+                            <strong class="kg-card-name">FDA MAUDE Adverse Events</strong>
+                        </div>
+                        <p class="kg-card-desc">FDA MAUDE adverse event reports with standardized product codes.</p>
+                        <span class="kg-card-tag" style="color: #C62828; background: #FFEBEE;">Health</span>
+                    </a>
+                    
+                    <a href="https://registry.okn.us/registry/kgs/nasa-gesdisc-kg/" class="kg-card"  rel="noopener noreferrer" title="The NASA Knowledge Graph Dataset is an expansive graph-based dataset designed to integrate and interconnect information about satellite datasets, scientific publications, instruments, platforms, projects, data centers, and science keywords.">
+                        <div class="kg-card-header">
+                            <span class="kg-status-dot" style="background: #1565C0;"></span>
+                            <strong class="kg-card-name">NASA-GESDISC-KG</strong>
+                        </div>
+                        <p class="kg-card-desc">Satellite datasets, publications, instruments, platforms, and projects.</p>
+                        <span class="kg-card-tag" style="color: #1565C0; background: #E3F2FD;">Space</span>
+                    </a>
+                    
+                    <a href="https://registry.okn.us/registry/kgs/ncipidkg/" class="kg-card"  rel="noopener noreferrer" title="The NCI-PID 2.0 Knowledge Graph converts NCI Pathway Interaction Database version 2.0 networks into RDF, capturing protein interactions, signaling pathways, and post-translational modifications enriched with INDRA evidence metadata.">
+                        <div class="kg-card-header">
+                            <span class="kg-status-dot" style="background: #6A1B9A;"></span>
+                            <strong class="kg-card-name">NCI-PID 2.0 KG</strong>
+                        </div>
+                        <p class="kg-card-desc">NCI Pathway Interaction Database in RDF with INDRA evidence metadata.</p>
+                        <span class="kg-card-tag" style="color: #6A1B9A; background: #F3E5F5;">Bio</span>
+                    </a>
+                    
+                    <a href="https://registry.okn.us/registry/kgs/nde/" class="kg-card"  rel="noopener noreferrer" title="The nde (NIAID Data Ecosystem) KG contains infectious and immune-mediated disease datasets. These include datasets from NIAID-funded repositories as well as globally-relevant infectious and immune-mediated disease (IID) repositories from NIH and beyond.">
+                        <div class="kg-card-header">
+                            <span class="kg-status-dot" style="background: #C62828;"></span>
+                            <strong class="kg-card-name">NIAID Data Ecosystem KG</strong>
+                        </div>
+                        <p class="kg-card-desc">Infectious and immune-mediated disease datasets.</p>
+                        <span class="kg-card-tag" style="color: #C62828; background: #FFEBEE;">Health</span>
+                    </a>
+                    
+                    <a href="https://registry.okn.us/registry/kgs/nikg/" class="kg-card"  rel="noopener noreferrer" title="Neighborhood Information KG (NIKG) is a knowledge graph warehouse for neighborhood information.">
+                        <div class="kg-card-header">
+                            <span class="kg-status-dot" style="background: #AD1457;"></span>
+                            <strong class="kg-card-name">Neighborhood Information KG</strong>
+                        </div>
+                        <p class="kg-card-desc">Knowledge graph warehouse for neighborhood information.</p>
+                        <span class="kg-card-tag" style="color: #AD1457; background: #FCE4EC;">Social</span>
+                    </a>
+                    
+                    <a href="https://registry.okn.us/registry/kgs/oard-kg/" class="kg-card"  rel="noopener noreferrer" title="Open Annotations for Rare Diseases (OARD) Knowledge Graph — clinical associations between rare diseases and phenotypes derived from electronic health records.">
+                        <div class="kg-card-header">
+                            <span class="kg-status-dot" style="background: #C62828;"></span>
+                            <strong class="kg-card-name">OARD Rare-Disease KG</strong>
+                        </div>
+                        <p class="kg-card-desc">Rare-disease and phenotype associations from electronic health records.</p>
+                        <span class="kg-card-tag" style="color: #C62828; background: #FFEBEE;">Health</span>
+                    </a>
+                    
+                    <a href="https://registry.okn.us/registry/kgs/okn-void/" class="kg-card"  rel="noopener noreferrer" title="Collected VoID (Vocabulary of Interlinked Datasets) metadata for all OKN graphs">
+                        <div class="kg-card-header">
+                            <span class="kg-status-dot" style="background: #455A64;"></span>
+                            <strong class="kg-card-name">OKN VoID Descriptions</strong>
+                        </div>
+                        <p class="kg-card-desc">Vocabulary of Interlinked Datasets metadata for all OKN graphs.</p>
+                        <span class="kg-card-tag" style="color: #455A64; background: #ECEFF1;">Reference</span>
+                    </a>
+                    
+                    <a href="https://registry.okn.us/registry/kgs/pankgraph/" class="kg-card"  rel="noopener noreferrer" title="PanKgraph — PanKbase Knowledge Graph (NIDDK)">
+                        <div class="kg-card-header">
+                            <span class="kg-status-dot" style="background: #6A1B9A;"></span>
+                            <strong class="kg-card-name">PanKgraph</strong>
+                        </div>
+                        <p class="kg-card-desc">PanKbase Knowledge Graph (NIDDK).</p>
+                        <span class="kg-card-tag" style="color: #6A1B9A; background: #F3E5F5;">Bio</span>
+                    </a>
+                    
+                    <a href="https://registry.okn.us/registry/kgs/phaseskg/" class="kg-card"  rel="noopener noreferrer" title="Knowledge graph Promoting Healthy Aging through Semantic Enrichment">
+                        <div class="kg-card-header">
+                            <span class="kg-status-dot" style="background: #C62828;"></span>
+                            <strong class="kg-card-name">PHASES KG</strong>
+                        </div>
+                        <p class="kg-card-desc">Promoting Healthy Aging through Semantic Enrichment.</p>
+                        <span class="kg-card-tag" style="color: #C62828; background: #FFEBEE;">Health</span>
+                    </a>
+                    
+                    <a href="https://registry.okn.us/registry/kgs/prokn/" class="kg-card"  rel="noopener noreferrer" title="The Protein Knowledge Network (ProKN) integrates protein-centric data with the genomic-centric datasets of the Common Fund Data Ecosystem (CFDE), spanning heterogeneous biological data types across multiple domains.">
+                        <div class="kg-card-header">
+                            <span class="kg-status-dot" style="background: #6A1B9A;"></span>
+                            <strong class="kg-card-name">Protein Knowledge Network</strong>
+                        </div>
+                        <p class="kg-card-desc">Protein-centric data integrated with the Common Fund Data Ecosystem.</p>
+                        <span class="kg-card-tag" style="color: #6A1B9A; background: #F3E5F5;">Bio</span>
+                    </a>
+                    
+                    <a href="https://registry.okn.us/registry/kgs/rdkg/" class="kg-card"  rel="noopener noreferrer" title="RDKG is an open knowledge graph for rare diseases that integrates standardized disease identifiers and cross-references to support discovery and evidence synthesis.">
+                        <div class="kg-card-header">
+                            <span class="kg-status-dot" style="background: #C62828;"></span>
+                            <strong class="kg-card-name">Rare Disease KG</strong>
+                        </div>
+                        <p class="kg-card-desc">Open KG for rare diseases with standardized identifiers and cross-references.</p>
+                        <span class="kg-card-tag" style="color: #C62828; background: #FFEBEE;">Health</span>
+                    </a>
+                    
+                    <a href="https://registry.okn.us/registry/kgs/ruralkg/" class="kg-card"  rel="noopener noreferrer" title="Rural Resilience KG is a cross-domain knowledge graph to integrate health and justice for rural resilience.">
+                        <div class="kg-card-header">
+                            <span class="kg-status-dot" style="background: #AD1457;"></span>
+                            <strong class="kg-card-name">Rural Resilience KG</strong>
+                        </div>
+                        <p class="kg-card-desc">Health and justice for rural resilience.</p>
+                        <span class="kg-card-tag" style="color: #AD1457; background: #FCE4EC;">Social</span>
+                    </a>
+                    
+                    <a href="https://registry.okn.us/registry/kgs/sawgraph/" class="kg-card"  rel="noopener noreferrer" title="The Safe Agricultural Products and Water Graph (SAWGraph) PFAS KG stores data on PFAS observations and releases, describing the samples, the geospatial features they were taken from, the sampled environmental media, the specific chemical substances and the measurement values observed.">
+                        <div class="kg-card-header">
+                            <span class="kg-status-dot" style="background: #2E7D32;"></span>
+                            <strong class="kg-card-name">SAWGraph PFAS KG</strong>
+                        </div>
+                        <p class="kg-card-desc">PFAS observations, samples, and environmental measurements.</p>
+                        <span class="kg-card-tag" style="color: #2E7D32; background: #E8F5E9;">Environment</span>
+                    </a>
+                    
+                    <a href="https://registry.okn.us/registry/kgs/scales/" class="kg-card"  rel="noopener noreferrer" title="SCALES is an integrated justice platform to connect criminal justice data across data silos.">
+                        <div class="kg-card-header">
+                            <span class="kg-status-dot" style="background: #333333;"></span>
+                            <strong class="kg-card-name">SCALES</strong>
+                        </div>
+                        <p class="kg-card-desc">Criminal justice data across silos.</p>
+                        <span class="kg-card-tag" style="color: #333333; background: #F5F5F5;">Justice</span>
+                    </a>
+                    
+                    <a href="https://registry.okn.us/registry/kgs/securechainkg/" class="kg-card"  rel="noopener noreferrer" title="SecureChain is a knowledge graph for resilient, trustworthy, and secure software supply chains.">
+                        <div class="kg-card-header">
+                            <span class="kg-status-dot" style="background: #5D4037;"></span>
+                            <strong class="kg-card-name">SecureChain KG</strong>
+                        </div>
+                        <p class="kg-card-desc">Resilient, trustworthy, and secure software supply chains.</p>
+                        <span class="kg-card-tag" style="color: #5D4037; background: #EFEBE9;">Security</span>
+                    </a>
+                    
+                    <a href="https://registry.okn.us/registry/kgs/semopenalex/" class="kg-card"  rel="noopener noreferrer" title="Comprehensive information on scientific publications and related entities.">
+                        <div class="kg-card-header">
+                            <span class="kg-status-dot" style="background: #283593;"></span>
+                            <strong class="kg-card-name">SemOpenAlex</strong>
+                        </div>
+                        <p class="kg-card-desc">Scientific publications and related entities.</p>
+                        <span class="kg-card-tag" style="color: #283593; background: #E8EAF6;">Science</span>
+                    </a>
+                    
+                    <a href="https://registry.okn.us/registry/kgs/sockg/" class="kg-card"  rel="noopener noreferrer" title="The Soil Organic Carbon Knowledge Graph (SOCKG) enhances robust soil carbon modeling, which is crucial for voluntary carbon markets.">
+                        <div class="kg-card-header">
+                            <span class="kg-status-dot" style="background: #827717;"></span>
+                            <strong class="kg-card-name">SOC-KG</strong>
+                        </div>
+                        <p class="kg-card-desc">Soil organic carbon for robust soil carbon modeling.</p>
+                        <span class="kg-card-tag" style="color: #827717; background: #F9FBE7;">Soil</span>
+                    </a>
+                    
+                    <a href="https://registry.okn.us/registry/kgs/spatialkg/" class="kg-card"  rel="noopener noreferrer" title="The SAWGraph Spatial KG is part of the Safe Agricultural Products and Water Graph (SAWGraph) project. It contains all the Level 13 grid cells from the S2 grid as well as administrative regions of levels 1 to 3 (states, counties, and county subdivisions) and the spatial relationships between them for the 48 contiguous states in the U.S.">
+                        <div class="kg-card-header">
+                            <span class="kg-status-dot" style="background: #2E7D32;"></span>
+                            <strong class="kg-card-name">SAWGraph Spatial KG</strong>
+                        </div>
+                        <p class="kg-card-desc">S2 grid cells and U.S. administrative regions with spatial relationships.</p>
+                        <span class="kg-card-tag" style="color: #2E7D32; background: #E8F5E9;">Environment</span>
+                    </a>
+                    
+                    <a href="https://registry.okn.us/registry/kgs/spoke-genelab/" class="kg-card"  rel="noopener noreferrer" title="The spoke-genelab KG complements the spokeokn (SPOKE Open Knowledge Network) KG and is designed to integrate omics data from NASA&#39;s Open Science Data Repository (OSDR/GeneLab), which hosts results from spaceflight experiments.">
+                        <div class="kg-card-header">
+                            <span class="kg-status-dot" style="background: #1565C0;"></span>
+                            <strong class="kg-card-name">SPOKE GeneLab</strong>
+                        </div>
+                        <p class="kg-card-desc">Omics data from NASA&#39;s Open Science Data Repository (GeneLab).</p>
+                        <span class="kg-card-tag" style="color: #1565C0; background: #E3F2FD;">Space</span>
+                    </a>
+                    
+                    <a href="https://registry.okn.us/registry/kgs/spoke-okn/" class="kg-card"  rel="noopener noreferrer" title="The spoke-okn (SPOKE Open Knowledge Network) KG is a comprehensive biomedical and environmental health knowledge graph that integrates diverse data across genomics, environmental science, and public health.">
+                        <div class="kg-card-header">
+                            <span class="kg-status-dot" style="background: #C62828;"></span>
+                            <strong class="kg-card-name">SPOKE-OKN</strong>
+                        </div>
+                        <p class="kg-card-desc">Biomedical and environmental health data across genomics and public health.</p>
+                        <span class="kg-card-tag" style="color: #C62828; background: #FFEBEE;">Health</span>
+                    </a>
+                    
+                    <a href="https://registry.okn.us/registry/kgs/sudokn/" class="kg-card"  rel="noopener noreferrer" title="Supply and Demand Open Knowledge Network is an interconnected network of publicly available manufacturing capability data focused on Small and Medium-Sized Manufacturers.">
+                        <div class="kg-card-header">
+                            <span class="kg-status-dot" style="background: #EF6C00;"></span>
+                            <strong class="kg-card-name">SUDOKN</strong>
+                        </div>
+                        <p class="kg-card-desc">Manufacturing capability data for small and medium-sized manufacturers.</p>
+                        <span class="kg-card-tag" style="color: #EF6C00; background: #FFF3E0;">Industry</span>
+                    </a>
+                    
+                    <a href="https://registry.okn.us/registry/kgs/ubergraph/" class="kg-card"  rel="noopener noreferrer" title="Integrated suite of OBO ontologies with precomputed inferred relationships">
+                        <div class="kg-card-header">
+                            <span class="kg-status-dot" style="background: #455A64;"></span>
+                            <strong class="kg-card-name">Ubergraph</strong>
+                        </div>
+                        <p class="kg-card-desc">OBO ontologies with precomputed inferred relationships.</p>
+                        <span class="kg-card-tag" style="color: #455A64; background: #ECEFF1;">Reference</span>
+                    </a>
+                    
+                    <a href="https://registry.okn.us/registry/kgs/ufokn/" class="kg-card"  rel="noopener noreferrer" title="The Urban Flooding Open Knowledge Network (UF-OKN) is an informational infrastructure built using knowledge graphs aiming to extract structured content from the information scattered across open-source geospatial datasets and hydrologic models.">
+                        <div class="kg-card-header">
+                            <span class="kg-status-dot" style="background: #00838F;"></span>
+                            <strong class="kg-card-name">UF-OKN</strong>
+                        </div>
+                        <p class="kg-card-desc">Urban flooding from open geospatial datasets and hydrologic models.</p>
+                        <span class="kg-card-tag" style="color: #00838F; background: #E0F7FA;">Water</span>
+                    </a>
+                    
+                    <a href="https://registry.okn.us/registry/kgs/wikidata/" class="kg-card"  rel="noopener noreferrer" title="Wikidata is a free and open knowledge base that can be read and edited by both humans and machines">
+                        <div class="kg-card-header">
+                            <span class="kg-status-dot" style="background: #455A64;"></span>
+                            <strong class="kg-card-name">Wikidata</strong>
+                        </div>
+                        <p class="kg-card-desc">Free and open knowledge base, readable and editable by humans and machines.</p>
+                        <span class="kg-card-tag" style="color: #455A64; background: #ECEFF1;">Reference</span>
+                    </a>
+                    
+                    <a href="https://registry.okn.us/registry/kgs/wildlifekn/" class="kg-card"  rel="noopener noreferrer" title="This project seeks to create a comprehensive, integrative knowledge network for the management of wildlife in the context of climate change">
+                        <div class="kg-card-header">
+                            <span class="kg-status-dot" style="background: #558B2F;"></span>
+                            <strong class="kg-card-name">Wildlife-KN</strong>
+                        </div>
+                        <p class="kg-card-desc">Wildlife management in the context of climate change.</p>
+                        <span class="kg-card-tag" style="color: #558B2F; background: #F1F8E9;">Wildlife</span>
+                    </a>
+                    
+                </div>
+                <button class="kg-carousel-arrow right" data-carousel-arrow="right" aria-label="Scroll right" type="button">&#8250;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Use Cases Section -->
+    <section class="section-cards section-use-cases">
+        <div class="section-cards-inner">
+            <h2 class="section-cards-title">Featured use cases</h2>
+            <div class="use-cases-grid">
+                
+                <a href="https://github.com/sbl-sdsc/mcp-okn#case-studies" class="use-case-card" target="_blank" rel="noopener noreferrer">
+                    <strong class="use-case-title">Crosswalk case studies</strong>
+                    <span class="use-case-desc">Worked analyses that answer a research question across many graphs, each with a full transcript.</span>
+                    <span class="use-case-graphs">Disease biology, PFAS, environmental justice</span>
+                </a>
+
+                <a href="https://registry.okn.us/registry/kgs/dreamkg/" class="use-case-card" rel="noopener noreferrer">
+                    <strong class="use-case-title">Support for the unhoused</strong>
+                    <span class="use-case-desc">Find resources where to get help</span>
+                    <span class="use-case-graphs">DREAM-KG, Rural-KG</span>
+                </a>
+                
+                <a href="https://apps.okn.us/wobd" class="use-case-card" rel="noopener noreferrer">
+                    <strong class="use-case-title">Web of Biological Data</strong>
+                    <span class="use-case-desc">Connected biomedical knowledge graphs and dataset metadata. </span>
+                    <span class="use-case-graphs">WOBD</span>
+                </a>
+                
+                <a href="https://registry.okn.us/registry/kgs/spoke-okn/" class="use-case-card" rel="noopener noreferrer">
+                    <strong class="use-case-title">Biomedical research</strong>
+                    <span class="use-case-desc">Explore gene, protein and drug interactions</span>
+                    <span class="use-case-graphs">SPOKE, BioBricks</span>
+                </a>
+                
+                <a href="https://deep-wenokn.streamlit.app/" class="use-case-card" rel="noopener noreferrer">
+                    <strong class="use-case-title">Water and Infrastructure</strong>
+                    <span class="use-case-desc">Link hydrology, infrastructure, demographics, and environmental risk data across the U.S.</span>
+                    <span class="use-case-graphs">WEN-OKN, SAWGraph</span>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-left">
+                <span class="footer-powered">Powered by <a href="https://renci.org/" target="_blank" rel="noopener noreferrer" class="footer-link-inline">UNC Chapel Hill / RENCI</a> and <a href="http://www.onai.com" target="_blank" rel="noopener noreferrer" class="footer-link-inline">Onai Inc.</a></span>
+            </div>
+            <div class="footer-nsf">
+                <img src="resources/NSF_Official_logo_RGB.png" alt="National Science Foundation" class="nsf-logo" />
+                <span class="nsf-award">NSF Award #2535091</span>
+            </div>
+            <div class="footer-links">
+                
+                <a href="https://github.com/frink-okn/okn-registry/" class="footer-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                
+                <a href="https://www.nsf.gov/" class="footer-link" target="_blank" rel="noopener noreferrer">NSF</a>
+                
+                <a href="https://okn.us/privacy" class="footer-link" >Privacy</a>
+                
+            </div>
+        </div>
+    </footer>
+
+    <!-- Hamburger menu script -->
+    <script>
+    (function() {
+        var btn = document.getElementById('hamburger-btn');
+        var drawer = document.getElementById('mobile-nav-drawer');
+        var overlay = document.getElementById('mobile-nav-overlay');
+        var closeBtn = document.getElementById('mobile-nav-close');
+        function openMenu() { drawer.classList.add('open'); overlay.classList.add('visible'); document.body.style.overflow = 'hidden'; }
+        function closeMenu() { drawer.classList.remove('open'); overlay.classList.remove('visible'); document.body.style.overflow = ''; }
+        btn.addEventListener('click', openMenu);
+        closeBtn.addEventListener('click', closeMenu);
+        overlay.addEventListener('click', closeMenu);
+    })();
+    </script>
+
+    
+    <script src="js/carousel.js"></script>
+
+</body>
+
+</html>

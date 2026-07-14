@@ -1,0 +1,872 @@
+/* Proto-OKN Navbar Styles
+ * Modern top navbar matching frink.renci.org design
+ */
+
+/* ===== Site Navbar ===== */
+.site-navbar {
+    background: #2f204a;
+    position: sticky;
+    top: 0;
+    z-index: var(--z-index-dropdown, 1000);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    height: 56px;
+}
+
+/* ===== Left: Hamburger + Brand ===== */
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.navbar-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    width: 32px;
+    height: 32px;
+}
+
+.navbar-hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: white;
+    border-radius: 1px;
+    transition: var(--transition-base, 0.2s ease);
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.navbar-logo {
+    width: 32px;
+    height: 32px;
+    filter: brightness(0) invert(1);
+}
+
+.navbar-brand-text {
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 0.3px;
+}
+
+/* ===== Right: Nav Links ===== */
+.navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: var(--transition-base, 0.2s ease);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.nav-link:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* ===== Dropdown ===== */
+.nav-dropdown {
+    position: relative;
+}
+
+.nav-dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.nav-dropdown-toggle::after {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid rgba(255, 255, 255, 0.7);
+    margin-left: 2px;
+    transition: transform 0.2s ease;
+}
+
+.nav-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 4px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    min-width: 200px;
+    padding: 6px 0;
+    z-index: 1001;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
+    display: block;
+}
+
+.nav-dropdown-item {
+    display: block;
+    padding: 10px 20px;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.15s ease;
+}
+
+.nav-dropdown-item:hover {
+    background: var(--color-hover-background, #F5F0FA);
+    color: var(--color-primary-purple, #6B4C9A);
+}
+
+/* ===== Mobile Nav Overlay ===== */
+.mobile-nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.mobile-nav-overlay.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ===== Mobile Nav Drawer ===== */
+.mobile-nav-drawer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100vh;
+    background: white;
+    box-shadow: none;
+    z-index: 9999;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 0;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-nav-drawer.open {
+    transform: translateX(0);
+    box-shadow: 2px 0 12px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+.mobile-nav-close {
+    align-self: flex-end;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #666;
+    cursor: pointer;
+    padding: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    border-radius: 6px;
+    transition: background 0.2s ease;
+}
+
+.mobile-nav-close:hover {
+    background: #F5F0FA;
+    color: var(--color-primary-purple, #6B4C9A);
+}
+
+.mobile-nav-group {
+    margin-bottom: 16px;
+}
+
+.mobile-nav-heading {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #999;
+    padding: 8px 12px 4px;
+}
+
+.mobile-nav-link {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: background 0.15s ease;
+}
+
+.mobile-nav-link:hover {
+    background: #F5F0FA;
+    color: var(--color-primary-purple, #6B4C9A);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .navbar-hamburger {
+        display: flex;
+    }
+
+    .navbar-links {
+        display: none;
+    }
+}
+
+/* ===== Landing Hero ===== */
+.landing-hero {
+    text-align: center;
+    padding: 48px 24px 40px;
+    background: white;
+}
+
+.landing-hero .hero-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #333;
+    margin: 0 0 8px;
+}
+
+.landing-hero .hero-subtitle {
+    font-size: 16px;
+    color: #666;
+    margin: 0 0 36px;
+}
+
+.landing-hero .hero-blurb {
+    /* Explanatory paragraph shown BELOW the hero buttons.
+       Distinct from .hero-subtitle (the tagline above the buttons). */
+    max-width: 640px;
+    margin: 72px auto 0;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.55;
+    color: #2A2A2A;
+    text-align: center;
+}
+
+/* ===== Hero Buttons ===== */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+.hero-btn {
+    flex: 1;
+    max-width: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 28px 24px;
+    background: white;
+    border: 1px solid #E0E0E0;
+    border-radius: 14px;
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+    cursor: pointer;
+}
+
+.hero-btn:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+    border-color: #C0C0C0;
+}
+
+
+.hero-btn-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary-purple, #6B4C9A);
+}
+
+.hero-btn-icon svg {
+    width: 32px;
+    height: 32px;
+}
+
+.hero-btn-label {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.hero-btn-desc {
+    font-size: 13px;
+    color: #888;
+    line-height: 1.4;
+    text-align: center;
+}
+
+/* Two-up before the single-column breakpoint, so four cards don't crush. */
+@media (max-width: 1100px) {
+    .hero-buttons {
+        flex-wrap: wrap;
+        max-width: 560px;
+    }
+
+    .hero-btn {
+        flex: 1 1 240px;
+    }
+}
+
+@media (max-width: 700px) {
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-btn {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .landing-hero .hero-blurb {
+        font-size: 16px;
+        margin-top: 48px;
+        padding: 0 16px;
+    }
+}
+
+/* ===== Prose Page (Contribute Compute) ===== */
+.prose-page {
+    flex: 1 0 auto;
+    padding: 48px 24px;
+    background: white;
+}
+
+.prose-inner {
+    max-width: 740px;
+    margin: 0 auto;
+}
+
+.prose-inner h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #333;
+    margin: 0 0 20px;
+    line-height: 1.3;
+}
+
+.prose-inner h2 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #2f204a;
+    margin: 32px 0 12px;
+    line-height: 1.3;
+}
+
+.prose-inner p {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.7;
+    margin: 0 0 16px;
+}
+
+.prose-lead {
+    font-size: 18px !important;
+    color: #555 !important;
+    font-weight: 500;
+    border-left: 4px solid #2f204a;
+    padding-left: 16px;
+    margin-bottom: 28px !important;
+}
+
+.prose-inner h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin: 24px 0 8px;
+}
+
+.prose-inner ul,
+.prose-inner ol {
+    padding-left: 24px;
+    margin: 0 0 16px;
+}
+
+.prose-inner li {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 6px;
+}
+
+.config-list {
+    margin: 16px 0 24px !important;
+}
+
+.config-list > li {
+    margin-bottom: 16px;
+    font-size: 16px;
+    color: #444;
+}
+
+.config-list > li > strong {
+    color: #2f204a;
+    font-size: 17px;
+}
+
+.config-list ul {
+    margin: 6px 0 0;
+    padding-left: 20px;
+}
+
+.config-list ul li {
+    font-size: 15px;
+    margin-bottom: 2px;
+    line-height: 1.5;
+}
+
+.prose-inner pre {
+    background: #f5f5f5;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 16px;
+    overflow-x: auto;
+    margin: 0 0 16px;
+}
+
+.prose-inner code {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 14px;
+}
+
+.prose-inner p code,
+.prose-inner li code,
+.prose-inner td code {
+    background: #f0eff3;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.prose-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 0 16px;
+    font-size: 15px;
+}
+
+.prose-table th,
+.prose-table td {
+    text-align: left;
+    padding: 10px 14px;
+    border-bottom: 1px solid #e0e0e0;
+    color: #444;
+}
+
+.prose-table th {
+    font-weight: 600;
+    color: #2f204a;
+    background: #f9f8fb;
+}
+
+.prose-updated {
+    font-size: 13px !important;
+    color: #999 !important;
+    margin-top: 40px !important;
+    font-style: italic;
+}
+
+/* ===== Static Content Sections ===== */
+
+#app {
+    flex: 0 0 auto;
+}
+
+.static-content {
+    flex: 1 0 auto;
+    transition: opacity 0.3s ease;
+}
+
+.section-cards {
+    padding: 40px 24px;
+    background: var(--color-background-light, #FAFAFA);
+}
+
+.section-use-cases {
+    background: white;
+}
+
+.section-cards-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section-cards-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.section-cards-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #333;
+    margin: 0 0 20px;
+}
+
+.section-cards-view-all {
+    color: var(--color-primary-purple, #6B4C9A);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.section-cards-view-all:hover {
+    text-decoration: underline;
+}
+
+/* Knowledge Graph Cards */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* ---------------------------------------------------------------- */
+/* KG carousel                                                        */
+/* ---------------------------------------------------------------- */
+/* Horizontal scrolling rail of fixed-width cards. The track scrolls
+   natively (mouse wheel, trackpad, touch); the left/right arrows
+   are progressive enhancement wired up in scripts.js.
+
+   Cards keep their width so 40+ entries don't squeeze together.
+   Scroll-snap aligns each card to the start of the viewport when
+   the user pages with the arrows or flicks on touch. */
+
+.kg-carousel {
+    position: relative;
+    /* Padding leaves room for the arrow buttons without overlapping
+       card content. */
+    padding: 0 44px;
+}
+
+.kg-carousel-track {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    /* Hide native scrollbar — arrows + trackpad gestures replace it.
+       Kept for keyboard / accessibility on platforms that always
+       show the bar. */
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+}
+
+.kg-carousel-track .kg-card {
+    flex: 0 0 280px;          /* fixed width so cards don't shrink */
+    scroll-snap-align: start;
+}
+
+.kg-carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid #E0E0E0;
+    background: white;
+    color: #555;
+    font-size: 24px;
+    line-height: 1;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: background 0.15s ease, color 0.15s ease, opacity 0.15s ease;
+    z-index: 1;
+    /* Slight nudge so the glyph appears centered. */
+    padding: 0 0 2px 0;
+}
+
+.kg-carousel-arrow.left  { left: 0; }
+.kg-carousel-arrow.right { right: 0; }
+
+.kg-carousel-arrow:hover:not([disabled]) {
+    background: #f4f4f4;
+    color: #222;
+}
+
+.kg-carousel-arrow[disabled] {
+    opacity: 0.35;
+    cursor: default;
+}
+
+.kg-card {
+    background: white;
+    border: 1px solid #E0E0E0;
+    border-radius: 10px;
+    padding: 20px;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    cursor: pointer;
+}
+
+.kg-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+.kg-card-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.kg-status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.kg-card-name {
+    font-size: 16px;
+    color: #333;
+}
+
+.kg-card-desc {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    margin: 0 0 12px;
+}
+
+.kg-card-tag {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 12px;
+    border: none;
+}
+
+/* Use Case Cards */
+.use-cases-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+}
+
+.use-case-card {
+    background: #FAF7F2;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
+.use-case-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    transform: translateY(-2px);
+}
+
+/* Two-destination variant of the use-case grid (crosswalks page). */
+.use-cases-grid.use-cases-grid-two {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.use-case-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--color-primary-purple, #6B4C9A);
+}
+
+.use-case-desc {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.4;
+    margin-top: 2px;
+}
+
+.use-case-graphs {
+    font-size: 12px;
+    color: #999;
+    margin-top: 4px;
+}
+
+/* ===== Footer ===== */
+.site-footer {
+    background: #F5F5F5;
+    border-top: 1px solid #E0E0E0;
+    padding: 20px 24px;
+    margin-top: auto;
+}
+
+.footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.footer-left {
+    flex: 1;
+}
+
+.footer-powered {
+    font-size: 13px;
+    color: #666;
+}
+
+.footer-nsf {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.nsf-logo {
+    height: 40px;
+    width: auto;
+}
+
+.nsf-award {
+    font-size: 12px;
+    color: #666;
+    white-space: nowrap;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+    flex-shrink: 0;
+}
+
+.footer-link {
+    font-size: 13px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.15s ease;
+}
+
+.footer-link:hover {
+    color: var(--color-primary-purple, #6B4C9A);
+}
+
+.footer-link-inline {
+    color: #333;
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.footer-link-inline:hover {
+    color: var(--color-primary-purple, #6B4C9A);
+}
+
+/* ===== Responsive Cards ===== */
+/* Five use-case cards get too narrow below full width; step down to three. */
+@media (max-width: 1050px) {
+    .use-cases-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .use-cases-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .use-cases-grid,
+    .use-cases-grid.use-cases-grid-two {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+
+    .footer-left {
+        flex: none;
+    }
+}

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crosswalks — Open Knowledge Network</title>
+
+    <link rel="icon" type="image/png" href="resources/favicon.png">
+
+    <!-- Design System -->
+    <link rel="stylesheet" type="text/css" href="css/design-system.css">
+
+    <!-- Header Styles -->
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+
+    <!-- Main Application Styles -->
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header id="site-header" class="site-navbar">
+        <div class="navbar-inner">
+            <div class="navbar-left">
+                <button class="navbar-hamburger" id="hamburger-btn" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+                <a href="index.html" class="navbar-brand">
+                    <img src="resources/logo-small.svg" alt="OKN" class="navbar-logo" />
+                    <span class="navbar-brand-text">okn.us</span>
+                </a>
+            </div>
+            <nav class="navbar-links" id="navbar-links">
+
+                <div class="nav-dropdown">
+                    <button class="nav-link nav-dropdown-toggle">Explore</button>
+                    <div class="nav-dropdown-menu">
+
+                        <a href="https://registry.okn.us/" class="nav-dropdown-item">Fabric</a>
+
+                        <a href="https://registry.okn.us/registry/" class="nav-dropdown-item">okn.us Registry</a>
+
+                        <a href="https://apps.okn.us/embeddings/" class="nav-dropdown-item">Embeddings</a>
+
+                    </div>
+                </div>
+
+                <div class="nav-dropdown">
+                    <button class="nav-link nav-dropdown-toggle">Query okn.us</button>
+                    <div class="nav-dropdown-menu">
+
+                        <a href="https://apps.okn.us/" class="nav-dropdown-item">SPARQL</a>
+
+                        <a href="https://registry.okn.us/query/query-page/" class="nav-dropdown-item">Query Tool</a>
+
+                        <a href="https://registry.okn.us/query/sample-query-library/" class="nav-dropdown-item">Sample Query Library</a>
+
+                        <a href="https://okn.us/mcp" class="nav-dropdown-item">MCP Server</a>
+
+                    </div>
+                </div>
+
+                <div class="nav-dropdown">
+                    <button class="nav-link nav-dropdown-toggle">Contribute</button>
+                    <div class="nav-dropdown-menu">
+
+                        <a href="https://registry.okn.us/book/" class="nav-dropdown-item">Building Graphs</a>
+
+                        <a href="https://registry.okn.us/help/" class="nav-dropdown-item">Uploading Graphs</a>
+
+                    </div>
+                </div>
+
+                <a href="https://www.proto-okn.net/" class="nav-link">About</a>
+
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile nav drawer -->
+    <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+    <nav class="mobile-nav-drawer" id="mobile-nav-drawer">
+        <button class="mobile-nav-close" id="mobile-nav-close" aria-label="Close menu">&times;</button>
+
+        <div class="mobile-nav-group">
+            <span class="mobile-nav-heading">Explore</span>
+
+            <a href="https://registry.okn.us/" class="mobile-nav-link">Fabric</a>
+
+            <a href="https://registry.okn.us/registry/" class="mobile-nav-link">okn.us Registry</a>
+
+            <a href="https://apps.okn.us/embeddings/" class="mobile-nav-link">Embeddings</a>
+
+        </div>
+
+        <div class="mobile-nav-group">
+            <span class="mobile-nav-heading">Query okn.us</span>
+
+            <a href="https://apps.okn.us/" class="mobile-nav-link">SPARQL</a>
+
+            <a href="https://registry.okn.us/query/query-page/" class="mobile-nav-link">Query Tool</a>
+
+            <a href="https://registry.okn.us/query/sample-query-library/" class="mobile-nav-link">Sample Query Library</a>
+
+            <a href="https://okn.us/mcp" class="mobile-nav-link">MCP Server</a>
+
+        </div>
+
+        <div class="mobile-nav-group">
+            <span class="mobile-nav-heading">Contribute</span>
+
+            <a href="https://registry.okn.us/book/" class="mobile-nav-link">Building Graphs</a>
+
+            <a href="https://registry.okn.us/help/" class="mobile-nav-link">Uploading Graphs</a>
+
+        </div>
+
+        <a href="https://www.proto-okn.net/" class="mobile-nav-link">About</a>
+
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="landing-hero">
+        <h1 class="hero-title">Crosswalks</h1>
+        <p class="hero-subtitle">Shared identifiers and mappings that link the OKN knowledge graphs</p>
+
+        <p class="hero-blurb">Verified crosswalks connect knowledge graphs that were built independently, letting a
+            single question span them. Explore them as a network, or look them up in the full inventory.</p>
+    </section>
+
+    <!-- Crosswalk destinations -->
+    <section class="section-cards section-use-cases">
+        <div class="section-cards-inner">
+            <div class="use-cases-grid use-cases-grid-two">
+
+                <a href="https://sbl-sdsc.github.io/mcp-okn/docs/crosswalks/crosswalk-network.html" class="use-case-card" target="_blank" rel="noopener noreferrer">
+                    <strong class="use-case-title">Crosswalk network</strong>
+                    <span class="use-case-desc">Interactive map of which knowledge graphs connect to which, and how densely. Hover an edge for detail, filter by domain or join method.</span>
+                    <span class="use-case-graphs">Interactive visualization</span>
+                </a>
+
+                <a href="https://sbl-sdsc.github.io/mcp-okn/docs/crosswalks/proto-okn-crosswalk-inventory.html" class="use-case-card" target="_blank" rel="noopener noreferrer">
+                    <strong class="use-case-title">Crosswalk inventory</strong>
+                    <span class="use-case-desc">The full table of every crosswalk, grouped by domain, with the shared identifier and example research questions for each. Every question links to a worked transcript showing how it was answered.</span>
+                    <span class="use-case-graphs">Reference table · with transcripts</span>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-left">
+                <span class="footer-powered">Powered by <a href="https://renci.org/" target="_blank" rel="noopener noreferrer" class="footer-link-inline">UNC Chapel Hill / RENCI</a> and <a href="http://www.onai.com" target="_blank" rel="noopener noreferrer" class="footer-link-inline">Onai Inc.</a></span>
+            </div>
+            <div class="footer-nsf">
+                <img src="resources/NSF_Official_logo_RGB.png" alt="National Science Foundation" class="nsf-logo" />
+                <span class="nsf-award">NSF Award #2535091</span>
+            </div>
+            <div class="footer-links">
+
+                <a href="https://github.com/frink-okn/okn-registry/" class="footer-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+
+                <a href="https://www.nsf.gov/" class="footer-link" target="_blank" rel="noopener noreferrer">NSF</a>
+
+                <a href="https://okn.us/privacy" class="footer-link" >Privacy</a>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Hamburger menu script -->
+    <script>
+    (function() {
+        var btn = document.getElementById('hamburger-btn');
+        var drawer = document.getElementById('mobile-nav-drawer');
+        var overlay = document.getElementById('mobile-nav-overlay');
+        var closeBtn = document.getElementById('mobile-nav-close');
+        function openMenu() { drawer.classList.add('open'); overlay.classList.add('visible'); document.body.style.overflow = 'hidden'; }
+        function closeMenu() { drawer.classList.remove('open'); overlay.classList.remove('visible'); document.body.style.overflow = ''; }
+        btn.addEventListener('click', openMenu);
+        closeBtn.addEventListener('click', closeMenu);
+        overlay.addEventListener('click', closeMenu);
+    })();
+    </script>
+
+</body>
+
+</html>
