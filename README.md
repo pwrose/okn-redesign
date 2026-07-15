@@ -26,3 +26,13 @@ review is the four-box hero, the Crosswalks landing page, and the
 
 Hosted with GitHub Pages from the `main` branch; edits pushed to `main`
 redeploy automatically in under a minute.
+
+## Leaving feedback
+
+- **Quick reactions and discussion:** reply in the Slack thread where this
+  link was shared.
+- **Specific, trackable requests:** open a GitHub issue at
+  https://github.com/pwrose/okn-redesign/issues — one issue per change so
+  each can be discussed and closed independently. Please name the page and
+  section (e.g. "Homepage → Explore Crosswalks box") and, for wording or
+  layout notes, quote the text you mean.
