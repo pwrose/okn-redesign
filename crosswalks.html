@@ -126,32 +126,57 @@
         <h1 class="hero-title">Crosswalks</h1>
         <p class="hero-subtitle">Shared identifiers and mappings that link the OKN knowledge graphs</p>
 
-        <p class="hero-blurb">Verified crosswalks connect knowledge graphs that were built independently, letting a
-            single question span them. Explore them as a network, or look them up in the full inventory.</p>
+        <p class="hero-blurb">A crosswalk is a verified way to join two knowledge graphs on a shared identifier — so a
+            question that no single graph can answer becomes answerable by combining them.</p>
+    </section>
+
+    <!-- Headline numbers -->
+    <section class="crosswalk-stats-section">
+        <div class="crosswalk-stats">
+            <div class="crosswalk-stat">
+                <span class="crosswalk-stat-value">162</span>
+                <span class="crosswalk-stat-label">verified crosswalks</span>
+            </div>
+            <div class="crosswalk-stat">
+                <span class="crosswalk-stat-value">35</span>
+                <span class="crosswalk-stat-label">knowledge graphs connected</span>
+            </div>
+            <div class="crosswalk-stat">
+                <span class="crosswalk-stat-value">328</span>
+                <span class="crosswalk-stat-label">worked example questions</span>
+            </div>
+            <div class="crosswalk-stat">
+                <span class="crosswalk-stat-value">15</span>
+                <span class="crosswalk-stat-label">domains covered</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Crosswalk destinations -->
+    <section class="section-cards section-use-cases">
+        <div class="section-cards-inner">
+            <h2 class="section-cards-title">Explore the crosswalks</h2>
+            <div class="use-cases-grid use-cases-grid-two">
+
+                <a href="https://sbl-sdsc.github.io/mcp-okn/docs/crosswalks/crosswalk-network.html" class="use-case-card" target="_blank" rel="noopener noreferrer">
+                    <strong class="use-case-title">Crosswalk network</strong>
+                    <span class="use-case-desc">Interactive map of which knowledge graphs connect to which, and how densely. Hover an edge for detail, filter by domain or join method.</span>
+                    <span class="use-case-graphs">Interactive visualization</span>
+                </a>
+
+                <a href="https://sbl-sdsc.github.io/mcp-okn/docs/crosswalks/proto-okn-crosswalk-inventory.html" class="use-case-card" target="_blank" rel="noopener noreferrer">
+                    <strong class="use-case-title">Crosswalk inventory</strong>
+                    <span class="use-case-desc">The full table of every crosswalk, grouped by domain, with the shared identifier and example research questions for each. Every question links to a worked transcript showing how it was answered.</span>
+                    <span class="use-case-graphs">Reference table · with transcripts</span>
+                </a>
+
+            </div>
+        </div>
     </section>
 
     <!-- What is a crosswalk? -->
     <section class="crosswalk-explainer">
         <div class="prose-inner">
-
-            <div class="crosswalk-stats">
-                <div class="crosswalk-stat">
-                    <span class="crosswalk-stat-value">162</span>
-                    <span class="crosswalk-stat-label">verified crosswalks</span>
-                </div>
-                <div class="crosswalk-stat">
-                    <span class="crosswalk-stat-value">35</span>
-                    <span class="crosswalk-stat-label">knowledge graphs connected</span>
-                </div>
-                <div class="crosswalk-stat">
-                    <span class="crosswalk-stat-value">328</span>
-                    <span class="crosswalk-stat-label">worked example questions</span>
-                </div>
-                <div class="crosswalk-stat">
-                    <span class="crosswalk-stat-value">15</span>
-                    <span class="crosswalk-stat-label">domains covered</span>
-                </div>
-            </div>
 
             <h2>What is a crosswalk?</h2>
             <p class="prose-lead">A crosswalk is a verified way to join two (or three) knowledge graphs on a shared
@@ -214,33 +239,37 @@
                 for. Because a graph pair that has been checked and does <em>not</em> join is recorded as such, the
                 assistant knows which paths are dead ends instead of guessing.</p>
 
-            <p>Every crosswalk in the inventory is worked twice — two research questions each — and every question links
-                to a standalone, replayable transcript containing the prompt, the answer, and every verbatim SPARQL
-                query with its results. The catalog spans 15 domains, from anatomy, genes, and proteins through
-                hydrology, environmental toxicology, and industry and supply chain.</p>
+            <h2>What is in the catalog</h2>
+            <p>Every crosswalk is worked twice — two research questions each — and every question links to a
+                standalone, replayable transcript containing the prompt, the answer, and every verbatim SPARQL query
+                with its results. Transcripts can be re-run against the endpoint, so a result is never just a claim on a
+                page. The 15 domains covered are:</p>
 
-        </div>
-    </section>
+            <ul class="crosswalk-domains">
+                <li>Anatomy &amp; Cell Type</li>
+                <li>Chemicals</li>
+                <li>Disease &amp; Phenotype</li>
+                <li>Earth Observation</li>
+                <li>Environmental Toxicology</li>
+                <li>Function &amp; Pathways</li>
+                <li>Genes</li>
+                <li>Geospatial</li>
+                <li>Hydrology</li>
+                <li>Industry &amp; Supply Chain</li>
+                <li>Justice &amp; Public Safety</li>
+                <li>Proteins</li>
+                <li>Publications</li>
+                <li>Social Determinants &amp; Services</li>
+                <li>Taxonomy</li>
+            </ul>
 
-    <!-- Crosswalk destinations -->
-    <section class="section-cards section-use-cases">
-        <div class="section-cards-inner">
-            <h2 class="section-cards-title">Explore the crosswalks</h2>
-            <div class="use-cases-grid use-cases-grid-two">
+            <p>Beyond the two-graph crosswalks, a set of end-to-end <a
+                    href="https://github.com/sbl-sdsc/mcp-okn#case-studies" target="_blank"
+                    rel="noopener noreferrer">case studies</a> chains many graphs into a single evidence-backed map —
+                the biology of a disease across genes, variants, pathways, drugs, and clinical features; PFAS source
+                attribution and the chemical exposome; cumulative environmental-justice burden across U.S. counties;
+                and flood-mobilized contamination routed downstream through the stream network.</p>
 
-                <a href="https://sbl-sdsc.github.io/mcp-okn/docs/crosswalks/crosswalk-network.html" class="use-case-card" target="_blank" rel="noopener noreferrer">
-                    <strong class="use-case-title">Crosswalk network</strong>
-                    <span class="use-case-desc">Interactive map of which knowledge graphs connect to which, and how densely. Hover an edge for detail, filter by domain or join method.</span>
-                    <span class="use-case-graphs">Interactive visualization</span>
-                </a>
-
-                <a href="https://sbl-sdsc.github.io/mcp-okn/docs/crosswalks/proto-okn-crosswalk-inventory.html" class="use-case-card" target="_blank" rel="noopener noreferrer">
-                    <strong class="use-case-title">Crosswalk inventory</strong>
-                    <span class="use-case-desc">The full table of every crosswalk, grouped by domain, with the shared identifier and example research questions for each. Every question links to a worked transcript showing how it was answered.</span>
-                    <span class="use-case-graphs">Reference table · with transcripts</span>
-                </a>
-
-            </div>
         </div>
     </section>
 

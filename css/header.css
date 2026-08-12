@@ -772,16 +772,27 @@
 /* Prose block explaining what a crosswalk is, sitting between the hero and
    the destination cards. Reuses .prose-inner typography, adds the stat row,
    the worked-example callout, and the join-key legend. */
+/* Detailed prose, below the destination cards. The rule separates it from the
+   cards section, which shares the same white background. */
 .crosswalk-explainer {
     background: white;
-    padding: 8px 24px 40px;
+    padding: 40px 24px 48px;
+    border-top: 1px solid #EEE;
+    margin-top: 16px;
+}
+
+/* Headline numbers, shown between the hero and the destination cards. */
+.crosswalk-stats-section {
+    background: white;
+    padding: 0 24px 32px;
 }
 
 .crosswalk-stats {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 16px;
-    margin: 0 0 36px;
+    max-width: 720px;
+    margin: 0 auto;
 }
 
 .crosswalk-stat {
@@ -847,6 +858,35 @@
     border-bottom: none;
 }
 
+/* Domain coverage — a compact multi-column list, not a bulleted stack. */
+.crosswalk-domains {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px;
+    columns: 3;
+    column-gap: 24px;
+}
+
+.crosswalk-domains li {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.5;
+    padding: 5px 0 5px 14px;
+    position: relative;
+    break-inside: avoid;
+}
+
+.crosswalk-domains li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 11px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--color-primary-purple, #6B4C9A);
+}
+
 .crosswalk-key-name {
     font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
     font-size: 13px;
@@ -862,11 +902,19 @@
     .crosswalk-stats {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .crosswalk-domains {
+        columns: 2;
+    }
 }
 
 @media (max-width: 520px) {
     .crosswalk-stats {
         grid-template-columns: 1fr;
+    }
+
+    .crosswalk-domains {
+        columns: 1;
     }
 }
 
