@@ -733,12 +733,20 @@
     transform: translateY(-2px);
 }
 
-/* Two-destination variant of the use-case grid (crosswalks page). */
+/* Two-destination variant of the use-case grid (crosswalks page).
+   The grid is narrower than the 1100px section, so its heading is centred
+   over the cards rather than flush with the section edge. */
 .use-cases-grid.use-cases-grid-two {
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
     max-width: 720px;
     margin: 0 auto;
+}
+
+.section-cards-inner:has(> .use-cases-grid-two) > .section-cards-title {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .use-case-title {
@@ -758,6 +766,108 @@
     font-size: 12px;
     color: #999;
     margin-top: 4px;
+}
+
+/* ===== Crosswalk explainer (crosswalks.html) ===== */
+/* Prose block explaining what a crosswalk is, sitting between the hero and
+   the destination cards. Reuses .prose-inner typography, adds the stat row,
+   the worked-example callout, and the join-key legend. */
+.crosswalk-explainer {
+    background: white;
+    padding: 8px 24px 40px;
+}
+
+.crosswalk-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin: 0 0 36px;
+}
+
+.crosswalk-stat {
+    background: #FAF7F2;
+    border-radius: 10px;
+    padding: 18px 16px;
+    text-align: center;
+}
+
+.crosswalk-stat-value {
+    display: block;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--color-primary-purple, #6B4C9A);
+    line-height: 1.1;
+}
+
+.crosswalk-stat-label {
+    display: block;
+    font-size: 13px;
+    color: #666;
+    margin-top: 6px;
+}
+
+.crosswalk-example {
+    background: #FAF7F2;
+    border-left: 4px solid var(--color-primary-purple, #6B4C9A);
+    border-radius: 0 8px 8px 0;
+    padding: 16px 20px;
+    margin: 0 0 20px;
+}
+
+.crosswalk-example-q {
+    font-size: 15px;
+    font-weight: 600;
+    color: #2f204a;
+    margin: 0 0 6px !important;
+    line-height: 1.5;
+}
+
+.crosswalk-example-a {
+    font-size: 14px !important;
+    color: #555 !important;
+    line-height: 1.6;
+    margin: 0 !important;
+}
+
+.crosswalk-keys {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px;
+}
+
+.crosswalk-keys li {
+    font-size: 15px;
+    color: #444;
+    line-height: 1.6;
+    padding: 8px 0;
+    border-bottom: 1px solid #EEE;
+}
+
+.crosswalk-keys li:last-child {
+    border-bottom: none;
+}
+
+.crosswalk-key-name {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 13px;
+    font-weight: 600;
+    color: #2f204a;
+    background: #F3EFF8;
+    border-radius: 4px;
+    padding: 2px 6px;
+    margin-right: 6px;
+}
+
+@media (max-width: 900px) {
+    .crosswalk-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 520px) {
+    .crosswalk-stats {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* ===== Footer ===== */

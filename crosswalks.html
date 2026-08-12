@@ -130,9 +130,102 @@
             single question span them. Explore them as a network, or look them up in the full inventory.</p>
     </section>
 
+    <!-- What is a crosswalk? -->
+    <section class="crosswalk-explainer">
+        <div class="prose-inner">
+
+            <div class="crosswalk-stats">
+                <div class="crosswalk-stat">
+                    <span class="crosswalk-stat-value">162</span>
+                    <span class="crosswalk-stat-label">verified crosswalks</span>
+                </div>
+                <div class="crosswalk-stat">
+                    <span class="crosswalk-stat-value">35</span>
+                    <span class="crosswalk-stat-label">knowledge graphs connected</span>
+                </div>
+                <div class="crosswalk-stat">
+                    <span class="crosswalk-stat-value">328</span>
+                    <span class="crosswalk-stat-label">worked example questions</span>
+                </div>
+                <div class="crosswalk-stat">
+                    <span class="crosswalk-stat-value">15</span>
+                    <span class="crosswalk-stat-label">domains covered</span>
+                </div>
+            </div>
+
+            <h2>What is a crosswalk?</h2>
+            <p class="prose-lead">A crosswalk is a verified way to join two (or three) knowledge graphs on a shared
+                identifier — for example, linking a disease in one graph to the genes another graph associates with it
+                through a common MONDO or DOID code.</p>
+
+            <p>The OKN graphs are built by different teams, in different domains, on different ontologies. Each one is
+                useful on its own, but the value of the federation is in the connections between them: a crosswalk is an
+                <em>integration opportunity</em>, a place where a question that no single graph can answer becomes
+                answerable by combining two.</p>
+
+            <div class="crosswalk-example">
+                <p class="crosswalk-example-q">“Which genes are associated with autism spectrum disorder, and what is
+                    known about them?”</p>
+                <p class="crosswalk-example-a">A rare-disease graph knows the gene–disease associations. A biomedical
+                    graph knows the pathways, drugs, and protein interactions for those genes. Neither can answer the
+                    whole question — the crosswalk on the shared disease identifier joins them into one result.</p>
+            </div>
+
+            <div class="crosswalk-example">
+                <p class="crosswalk-example-q">“What is the maximum PFAS measurement in each county?”</p>
+                <p class="crosswalk-example-a">A contamination-monitoring graph holds the measurements at sampling
+                    sites. A geospatial graph holds county boundaries and their identifiers. The crosswalk on the shared
+                    place identifier aggregates the readings up to counties.</p>
+            </div>
+
+            <h2>How they work</h2>
+            <p>Every crosswalk names a <strong>shared key</strong> — the identifier that both graphs happen to use for
+                the same real-world thing — along with the predicates that carry it on each side and the number of rows
+                the join actually returns. Typical keys include:</p>
+
+            <ul class="crosswalk-keys">
+                <li><span class="crosswalk-key-name">MONDO / DOID</span> disease identifiers</li>
+                <li><span class="crosswalk-key-name">Entrez / HGNC / Ensembl</span> gene identifiers</li>
+                <li><span class="crosswalk-key-name">CHEBI / PubChem</span> chemical identifiers</li>
+                <li><span class="crosswalk-key-name">NCBITaxon</span> organism identifiers</li>
+                <li><span class="crosswalk-key-name">FIPS / GEOID</span> geographic area identifiers</li>
+            </ul>
+
+            <p>Not every pair lines up directly. Where two graphs use different schemes for the same entity, the join is
+                routed through a <strong>bridge graph</strong> — <code>ubergraph</code> maps DOID to MONDO, for
+                instance, and <code>wikidata</code> maps HGNC to Entrez. The network map shows these as dashed and
+                dotted edges so you can see at a glance which connections are direct and which are bridged.</p>
+
+            <p>Crosswalks are <strong>verified, not inferred</strong>. Each one has been run as live federated SPARQL
+                against the endpoints to confirm it returns rows, and the findings were checked against an authoritative
+                source — biomedical claims against the published literature, geospatial and industrial joins against the
+                shared standard they key on.</p>
+
+            <h2>How they are used</h2>
+            <p>Crosswalks are the routing layer for questions that span the federation. Rather than reading 35 schemas
+                to work out where two graphs might meet, you look up the verified recipe and write the query against
+                it.</p>
+
+            <p>They are also what lets an AI assistant query OKN reliably. The
+                <a href="https://okn.us/mcp">MCP server</a> exposes the crosswalk table as tools an assistant calls
+                before writing any SPARQL: one lists every verified integration point across the federation, another
+                returns the full join recipe for a specific pair of graphs, and a third answers the reverse question —
+                which graphs can supply pathway, trait, or disease context for an entity you already have an identifier
+                for. Because a graph pair that has been checked and does <em>not</em> join is recorded as such, the
+                assistant knows which paths are dead ends instead of guessing.</p>
+
+            <p>Every crosswalk in the inventory is worked twice — two research questions each — and every question links
+                to a standalone, replayable transcript containing the prompt, the answer, and every verbatim SPARQL
+                query with its results. The catalog spans 15 domains, from anatomy, genes, and proteins through
+                hydrology, environmental toxicology, and industry and supply chain.</p>
+
+        </div>
+    </section>
+
     <!-- Crosswalk destinations -->
     <section class="section-cards section-use-cases">
         <div class="section-cards-inner">
+            <h2 class="section-cards-title">Explore the crosswalks</h2>
             <div class="use-cases-grid use-cases-grid-two">
 
                 <a href="https://sbl-sdsc.github.io/mcp-okn/docs/crosswalks/crosswalk-network.html" class="use-case-card" target="_blank" rel="noopener noreferrer">
